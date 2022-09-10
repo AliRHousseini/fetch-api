@@ -64,9 +64,7 @@ padding: 1rem;
     height:100%;
 }
 
-
-
-  .close-button{
+.close-button{
     background-color: #2C3333;
     border: none;
     color: #E7F6F2;
@@ -80,6 +78,46 @@ padding: 1rem;
     border-radius: 12px;
   }
 
-  .result{
+.result{
     display: none;
+  }
+
+/* aligning the dog image and name request and making their divs responsive using flex */
+.flex-container {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .flex-item-left {
+    /* background-color: #f1f1f1; */
+    padding: 10px;
+    flex: 50%;
+    margin:auto;
+  }
+  
+  .flex-item-right {
+    /* background-color: dodgerblue; */
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  /* Responsive layout - makes a one column-layout instead of two-column layout */
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+    .dog-image{
+        width: 100%;
+        margin: auto;
+    }
+    
+    .name-request{
+        width: 100%;
+        margin:auto;
+    
+    }
+
   }
