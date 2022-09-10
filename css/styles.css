@@ -7,11 +7,41 @@
   }
 
 img {
-    /* max-width: 100%; */
+    max-width: 100%;
     height: auto;
     width: auto;
+    border-radius: 8px;
+    margin: 2rem auto 0rem;
 }
 
+body{
+    background-color: #A5C9CA;
+    color:#E7F6F2;
+}
+
+h2{
+    padding-bottom: 1rem;
+}
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #E7F6F2;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #E7F6F2;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  input[type=text]:focus {
+    width: 100%;
+    2px solid #E7F6F2;
+  }
 
 .top-bar{
 background-color: #2C3333;
@@ -19,3 +49,37 @@ color: #E7F6F2;
 padding: 1rem;
 }
 
+.dog-image{
+ width: 50%;
+ margin: auto;
+}
+
+.name-request{
+    width: 50%;
+    margin:auto;
+
+}
+
+.main-div{
+    height:100%;
+}
+
+
+
+  .close-button{
+    background-color: #2C3333;
+    border: none;
+    color: #E7F6F2;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+
+  .result{
+    display: none;
+  }

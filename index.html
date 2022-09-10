@@ -7,17 +7,41 @@
 <body>
 
 <div class="top-bar">
-<h2>Enter Your Name</h2>
-<p>guess the gender, age, and nationality.</p>
+<h2>Enter Your Name To:</h2>
+<p>guess your gender, age, and nationality.</p>
 </div>
 
 
 <!-- dog image to the right and buttons to the left -->
-<div>
-    <label> your future dog</label>
-    <img src="img_5terre_wide.jpeg" alt="Cinque Terre" width="1000" height="300">
+
+<div class="main-div flex-container">
+
+<div class="flex-item-left">
+
+<div class="name-request ">
+<p> Enter Your Name</p>
+<input type="text" name="search" placeholder="Search..">
+</div>
+
+<div class="result">
+<p> your gender is:</p>
+<p>s</p>
+<p> your nationality is:</p>
+<p></p>
+<p> your age is:</p>
+<p></p>
+<button class="close-button">Close</button>
 
 </div>
 
+</div>
+
+<div class="dog-image flex-item-right">
+    <img src="img_5terre_wide.jpeg" alt="Cinque Terre" >
+    <!-- width="1000" height="300" -->
+    <p> your future dog</p>
+</div>
+
+</div>
 </body>
 </html>
