@@ -1,53 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/styles.css">
-<script src="js/script.js"></script>
-</head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/styles.css">
+        <script src="js/script.js"></script>
+    </head>
+
 <body>
-
-<div class="top-bar">
-<h2>Enter Your Name To:</h2>
-<p>guess your gender, age, and nationality.</p>
-</div>
-
-
-<!-- dog image to the right and buttons to the left -->
-
-<div class="main-div flex-container">
-
-<div class="flex-item-left">
-
-<div class="name-request " id="search-results">
-<p> Enter Your Name</p>
-<input type="text" name="search" id="input-name" placeholder="Search..">
-<br>
-<button class="close-button" id="search">Search</button>
-</div>
-
-<div class="result" id="final-results">
-<p> your gender is:</p>
-<p id="get-gender">s</p>
-<p> your nationality is:</p>
-<p id="get-nation"></p>
-<p id="get-nation2"></p>
-<p> your age is:</p>
-<p id="get-age"></p>
-<button class="close-button" id="reset" onclick="document.location.reload(true)">Close</button>
-
-</div>
-
-</div>
-
-<div class="dog-image flex-item-right">
-    <img src="" alt="Dog" id="get-image">
-    <p> your future dog</p>
-</div>
-
-</div>
-
-
-
+    <div class="top-bar">
+    <h2>Enter Your Name To:</h2>
+    <p>guess your gender, age, and nationality.</p>
+    </div>
+    <!-- dog image to the right and the rest to the left -->
+    <div class="main-div flex-container">
+        <div class="flex-item-left">
+            <div class="name-request " id="search-results">
+            <p> Enter Your Name</p>
+            <input type="text" name="search" id="input-name" placeholder="ex: Jhon">
+            <br>
+            <button class="close-button" id="search">Search</button>
+            </div>
+            <!-- The results are invisible, will appear when you search for the name -->
+            <div class="visibile" id="final-results">
+            <p> your gender is:</p>
+            <p class="result-part" id="get-gender"></p>
+            <p> your nationality is:</p>
+            <p class="result-part" id="get-nation"></p>
+            <p class="result-part" id="get-nation2"></p>
+            <p> your age is:</p>
+            <p class="result-part" id="get-age"></p>
+            <button class="close-button" id="reset" onclick="document.location.reload(true)">Close</button>
+            </div>
+        </div>
+        <div class="dog-image flex-item-right">
+            <img src="" alt="Dog" id="get-image">
+            <p> your future dog</p>
+        </div>
+    </div>
 </body>
 </html>

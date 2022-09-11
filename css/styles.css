@@ -30,34 +30,34 @@ input[type=text] {
     border-radius: 4px;
     font-size: 16px;
     background-color: #E7F6F2;
-    /* background-image: url('searchicon.png'); */
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
   }
   
-  input[type=text]:focus {
+input[type=text]:focus {
     width: 100%;
     2px solid #E7F6F2;
-  }
+}
 
 .top-bar{
-background-color: #2C3333;
-color: #E7F6F2;
-padding: 1rem;
+    background-color: #2C3333;
+    color: #E7F6F2;
+    padding: 1rem;
 }
 
 .dog-image{
- width: 50%;
- margin: auto;
+    width: 50%;
+    margin: auto;
 }
 
 .name-request{
     width: 50%;
     margin:auto;
-
 }
 
 .main-div{
@@ -78,9 +78,13 @@ padding: 1rem;
     border-radius: 12px;
   }
 
-.result{
+.visibile{
     display: none;
   }
+
+.result-part{
+    color:#395B64;
+}
 
 /* aligning the dog image and name request and making their divs responsive using flex */
 .flex-container {
@@ -113,11 +117,8 @@ padding: 1rem;
         width: 100%;
         margin: auto;
     }
-    
     .name-request{
         width: 100%;
         margin:auto;
-    
     }
-
   }

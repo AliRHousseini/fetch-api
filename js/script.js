@@ -1,4 +1,4 @@
-
+// fetching the dog image and putting it in the image part
 fetch("https://dog.ceo/api/breeds/image/random")
 .then((response) => response.json())
 .then((data) => {
@@ -6,6 +6,8 @@ fetch("https://dog.ceo/api/breeds/image/random")
     document.getElementById('get-image').src=data.message;
 });
 
+//fetching age, gender, and nantionality
+//redundant functions need to be reduced to one
 window.onload = () => {
 const getAgeInput = (api) =>{
     fetch(api)
@@ -37,31 +39,17 @@ const getNationInput = (api) =>{
 
 
 let startSearch = (e) => {
-
     const name = document.getElementById("input-name").value; 
     const apiAge="https://api.agify.io/?name=" + name;
-    console.log(apiAge)
     let apiGender="https://api.genderize.io?name=" + name;
     let apiNation="https://api.nationalize.io/?name=" + name;
-
     let ageJson = getAgeInput(apiAge);
-    // console.log(ageJson)
     let genderJson = getGenderInput(apiGender);
     let nationalityJson = getNationInput(apiNation);
-    // console.log(ageJson)
-    document.getElementById("final-results").classList.remove("result")
-    document.getElementById("search-results").classList.add("result")
+    document.getElementById("final-results").classList.remove("visibile")
+    document.getElementById("search-results").classList.add("visibile")
 }
 
-
-//     fetch(apiAge)
-//   .then((response) => response.json())
-//   .then((data) => console.log(data));
-
-
-    search.addEventListener("click", startSearch);
-    // reset.addEventListener("click", resetHandler)
-    // reset.addEventListener("click",document.location.reload(true))
-
+search.addEventListener("click", startSearch);
 
 }
