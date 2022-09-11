@@ -20,7 +20,9 @@
 
 <div class="name-request ">
 <p> Enter Your Name</p>
-<input type="text" name="search" placeholder="Search..">
+<input type="text" name="search" id="input-name" placeholder="Search..">
+<br>
+<button class="close-button" id="search">Search</button>
 </div>
 
 <div class="result">
@@ -30,7 +32,7 @@
 <p></p>
 <p> your age is:</p>
 <p></p>
-<button class="close-button">Close</button>
+<button class="close-button" id="reset">Close</button>
 
 </div>
 
@@ -44,14 +46,26 @@
 
 </div>
 
-
-<div class="container"></div>
 <!-- <script src="js/script.js"></script> -->
 
 <script>
-    fetch('https://api.agify.io/?name=nour')
+    const getValueInput = () =>{
+      let name = document.getElementById("input-name").value; 
+    //   document.getElementById("valueInput").innerHTML = inputValue; 
+    }
+
+    let apiAge="https://api.agify.io/?name=" + name;
+    let apiGender="https://api.genderize.io?name=" + name;
+    let apiNation="https://api.nationalize.io/?name=" + name;
+
+    fetch(apiAge)
   .then((response) => response.json())
   .then((data) => console.log(data));
+
+
+    search.addEventListener("click", startSearch)
+    reset.addEventListener("click", resetHandler)
+
 </script>
 </body>
 </html>
