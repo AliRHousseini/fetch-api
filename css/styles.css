@@ -41,13 +41,24 @@ input[type=text] {
   
 input[type=text]:focus {
     width: 100%;
-    2px solid #E7F6F2;
+    border: 2px solid #E7F6F2;
 }
 
 .top-bar{
     background-color: #2C3333;
     color: #E7F6F2;
     padding: 1rem;
+}
+
+.bot-div{
+  background-color: #2C3333;
+  color: #E7F6F2;
+  padding: 1rem;
+  /* position: fixed; */
+  bottom: 0px;
+  width: 50%;
+  margin: 10px auto 0px auto;
+  border-radius: 10px;
 }
 
 .dog-image{

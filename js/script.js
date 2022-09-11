@@ -53,3 +53,21 @@ let startSearch = (e) => {
 search.addEventListener("click", startSearch);
 
 }
+
+// axios function to retrieve the random event and the ip
+
+async function getRandomActivity() {
+  let res = await axios.get('https://www.boredapi.com/api/activity');
+  let data = res.data;
+  console.log(data);
+  document.getElementById('random-activity').innerHTML=data.activity;
+}
+getRandomActivity();
+
+async function getIP() {
+    let res = await axios.get('https://api.ipify.org/?format=json');
+    let data = res.data;
+    console.log(data);
+    document.getElementById('my-ip').innerHTML=data.ip;
+  } 
+  getIP();
