@@ -18,29 +18,29 @@
 
 <div class="flex-item-left">
 
-<div class="name-request ">
+<div class="name-request " id="search-results">
 <p> Enter Your Name</p>
 <input type="text" name="search" id="input-name" placeholder="Search..">
 <br>
 <button class="close-button" id="search">Search</button>
 </div>
 
-<div class="result">
+<div class="result" id="final-results">
 <p> your gender is:</p>
-<p>s</p>
+<p id="get-gender">s</p>
 <p> your nationality is:</p>
-<p></p>
+<p id="get-nation"></p>
+<p id="get-nation2"></p>
 <p> your age is:</p>
-<p></p>
-<button class="close-button" id="reset">Close</button>
+<p id="get-age"></p>
+<button class="close-button" id="reset" onclick="document.location.reload(true)">Close</button>
 
 </div>
 
 </div>
 
 <div class="dog-image flex-item-right">
-    <img src="img_5terre_wide.jpeg" alt="Cinque Terre" >
-    <!-- width="1000" height="300" -->
+    <img src="" alt="Dog" id="get-image">
     <p> your future dog</p>
 </div>
 
@@ -49,22 +49,71 @@
 <!-- <script src="js/script.js"></script> -->
 
 <script>
-    const getValueInput = () =>{
-      let name = document.getElementById("input-name").value; 
-    //   document.getElementById("valueInput").innerHTML = inputValue; 
+    
+
+fetch("https://dog.ceo/api/breeds/image/random")
+.then((response) => response.json())
+.then((data) => {
+    console.log(data)
+    document.getElementById('get-image').src=data.message;
+});
+
+
+const getAgeInput = (api) =>{
+    fetch(api)
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data.age)
+        document.getElementById('get-age').innerHTML=data.age;
+    });
     }
 
-    let apiAge="https://api.agify.io/?name=" + name;
+const getGenderInput = (api) =>{
+fetch(api)
+.then((response) => response.json())
+.then((data) => {
+    console.log(data.gender)
+    document.getElementById('get-gender').innerHTML=data.gender;
+});
+}   
+
+const getNationInput = (api) =>{
+    fetch(api)
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data.country[0].country_id)
+        document.getElementById('get-nation').innerHTML=data.country[0].country_id;
+        document.getElementById('get-nation2').innerHTML=data.country[1].country_id;
+    });
+    }
+
+
+let startSearch = (e) => {
+
+    const name = document.getElementById("input-name").value; 
+    const apiAge="https://api.agify.io/?name=" + name;
+    console.log(apiAge)
     let apiGender="https://api.genderize.io?name=" + name;
     let apiNation="https://api.nationalize.io/?name=" + name;
 
-    fetch(apiAge)
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+    let ageJson = getAgeInput(apiAge);
+    // console.log(ageJson)
+    let genderJson = getGenderInput(apiGender);
+    let nationalityJson = getNationInput(apiNation);
+    // console.log(ageJson)
+    document.getElementById("final-results").classList.remove("result")
+    document.getElementById("search-results").classList.add("result")
+}
 
 
-    search.addEventListener("click", startSearch)
-    reset.addEventListener("click", resetHandler)
+//     fetch(apiAge)
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
+
+
+    search.addEventListener("click", startSearch);
+    // reset.addEventListener("click", resetHandler)
+    // reset.addEventListener("click",document.location.reload(true))
 
 </script>
 </body>
